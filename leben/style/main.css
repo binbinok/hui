@@ -1,0 +1,56 @@
+body{
+    font-family: -apple-system,Helvetica,sans-serif;
+    line-height: 1.5em;
+}
+body, p, h2, ul, li, table, tr, td{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+a{
+    text-decoration: none;
+}
+.box{
+    color: #454545;
+    font-size: 1.5rem;
+    padding: 1.875rem;
+}
+.box:nth-child(2n-1){
+    background: #f6f6f6;
+}
+.box p{
+    padding-bottom: 1rem;
+    line-height: 2em;
+}
+.box p b{
+    font-weight: normal;
+    color: #017987;
+}
+.box h2{
+    color:#017987;
+    font-size: 1.875rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+.box h2 span{padding: 0 0 2rem 7.6rem;color: #454545}
+.box h2 span.tbg1{background: url('../images/img13.png') no-repeat left top;background-size: 5.375rem auto}
+.box video{width: 100%;margin: 1rem 0 2rem}
+.box p img{width: 50%;display: block;margin: 1rem auto}
+.box p img.m2{width: 14%}
+.box p img.m3{width: 60%}
+.box p img.m4{width: 60%}
+.box p img.m5{width: 100%}
+.down_list{width: 100%;}
+.down_list tr td{
+    border-bottom: 1px solid #dedede;
+    font-size: 1.8rem;
+    vertical-align: middle;
+    line-height: 1.5em;
+    padding: 1rem 0;
+}
+.down_list tr td:nth-child(1){padding-right: 1rem}
+.down_list tr td:nth-child(2){width: 4.125rem;text-align: right}
+.down_list tr td:nth-child(2) span{display: block;width: 4.125rem;height: 4.125rem;background: url('../images/down.png') no-repeat left top;background-size: 100% auto;}
+#downList a{color: #454545}
+#downList a.on{color: #017987}
