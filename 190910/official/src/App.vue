@@ -9,7 +9,16 @@ body, h1, h2, h3, h4, h5, h6, p{
   padding:0;
   margin: 0;
 }
+a{
+  text-decoration: none;
+  font-weight: normal;
+}
+ul, ol, li{
+  list-style: none;
+}
 #app {
+  max-width: 1920px;
+  margin: 0 auto;
   font-family:"Microsoft YaHei",'微软雅黑',"MicrosoftJhengHei",'华文细黑','STHeiti','MingLiu';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
