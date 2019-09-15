@@ -1,9 +1,10 @@
 <template>
     <div class="top">
         <div class="nav">
-            <span><a href="/curriculum">首页</a></span>
-            <span><a href="/teachers">应用场景</a></span>
-            <span><a href="/news">白皮书</a></span>
+            
+            <span><router-link to="/">首页</router-link></span>
+            <span><router-link to="/applicationscenaios">应用场景</router-link></span>
+            <span><a href="../assets/file/LKBT.pfd" target="_blank">白皮书</a></span>
         </div>
         <a class="logo" data-observer-type="fixBottom" href="/"></a>
     </div>
@@ -28,7 +29,6 @@
     float: left;
   }
   .nav {
-    width: 1202px;
     float: right;
     line-height: 48px;
     padding-top: 17px;

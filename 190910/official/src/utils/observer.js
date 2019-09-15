@@ -1,6 +1,6 @@
 import 'intersection-observer';
 
-export default function (self) {
+export default function () {
     let cb = records => {
         let record = records[0];
         let isIntersecting = record.isIntersecting;
@@ -9,18 +9,16 @@ export default function (self) {
         let classList = target.classList;
         let classValue = classList.value;
         let isLoaded = /\bloaded\b/g.test(classValue);
-    
+        console.log(
+            '----', dataset
+        )
         switch (dataset.observerType) {
-          case 'title':
-            isIntersecting && isLoaded || classList.add('loaded');
-            break;
-        
           default:
-            self.$store.commit('setDisplay', isIntersecting);
+            isIntersecting && isLoaded || classList.add('loaded');
             break;
         }
     };
-    let targets = document.querySelectorAll('h2.title, a.logo');
+    let targets = document.querySelectorAll('.detail');
     let ob = new IntersectionObserver(cb);
     for (let i in targets) {
         let t = targets[i];
