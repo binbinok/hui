@@ -1,4 +1,4 @@
-li<template>
+<template>
   <div class="applicationscenaios">
     <Top/>
     <div class="banner"></div>
