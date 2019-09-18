@@ -1,22 +1,32 @@
 <template>
     <div class="top">
+      <div class="box">
         <div class="nav">
-            
             <span><router-link to="/">首页</router-link></span>
             <span><router-link to="/applicationscenaios">应用场景</router-link></span>
-            <span><a href="../assets/file/LKBT.pfd" target="_blank">白皮书</a></span>
+            <span><a href="/dist/file/LKBT.pfd" target="_blank">白皮书</a></span>
         </div>
         <a class="logo" data-observer-type="fixBottom" href="/"></a>
+      </div>
     </div>
 </template>
 
 <style lang="less">
+.box{
+  width: 1202px;
+  margin: 0 auto;
+}
 .top {
   width: 100%;
   height: 90px;
   min-width: 1200px;
   line-height: 90px;
-
+  left: 0;
+  top: 0;
+  background: #fff;
+  position: fixed; 
+  box-shadow:0px 2px 10px #919191;
+  z-index: 10;
   .logo {
     width: 177px;
     height: 59px;

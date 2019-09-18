@@ -1,10 +1,10 @@
 <template>
-    <div class="footer">
+    <div class="footer_box">
         <div class="share">
-            <a href="#" class="weixin">&#xe893;</a>
-            <a href="#" class="weibo">&#xe62a;</a>
-            <a href="#" class="twitter">&#xe652;</a>
-            <a href="#" class="medium">&#xeb7b;</a>
+            <a href="https://mp.weixin.qq.com/s?__biz=Mzg2NTE3MzM3Nw==&mid=100000009&idx=1&sn=79505ff590a72f705d12d9ec834c2508&chksm=" target="_blank" class="weixin">&#xe893;</a>
+            <a href="https://weibo.com/5953111811/profile?topnav=1&wvr=6" target="_blank"  class="weibo">&#xe62a;</a>
+            <a href="https://twitter.com/LKBT__" target="_blank"  class="twitter">&#xe652;</a>
+            <a href="https://medium.com/@lkbt2019" target="_blank"  class="medium">&#xeb7b;</a>
         </div>
         <h6>Copyright © 2019 the LKBT Team</h6>
     </div>
@@ -12,12 +12,12 @@
 
 <script>
 export default {
-    name: 'footer'
+    name: 'footer_box'
 }
 </script>
 
 <style lang="less">
-.footer{
+.footer_box{
     width: 100%;
     min-width: 1202px;
     position: absolute;
@@ -45,6 +45,7 @@ export default {
             text-align: center;
             margin: 0 35px;
             line-height: 80px;
+            transition: all .5s ease-out;
             &:hover{
                 color: #43cfcd;
                 background: #fff;

@@ -5,7 +5,7 @@
     <div class="box">
       <div class="title future_data_assets">未来数据资产</div>
     </div>
-    <div class="future">
+    <div :class="{future: true, show: boxShow >= 1}">
       <div class="box">
         <div class="stars">
           <span></span>
@@ -54,7 +54,7 @@
     </div>
     <div class="box">
       <div class="title technical_system">技术体系</div>
-      <div class="net">
+      <div :class="{net: true, show: boxShow >= 2}">
         <div class="left">
           <div v-for="(n, index) in net" :class="{'btn'
           : true, [n.name]: true, on: netInfo && n.name == netInfo.name}" :key="index" @click="onChangeNet(index)">
@@ -70,10 +70,10 @@
     <div class="application">
       <div class="box">
         <div class="title application_scenarios">应用场景</div>
-        <div class="app_detail_cover">
+        <div class="app_detail_cover" :class="{app_detail_cover: true, show: boxShow >= 3}">
           <img src="../assets/application.png" alt="">
         </div>
-        <div class="app_detail">
+        <div class="app_detail" :class="{app_detail: true, show: boxShow >= 3}">
           <p>LKBT首选的合作伙伴是以“全球医疗均质化”为核心愿景的医疗智能合约协作平台——LEBEN（同医）,LEBEN的可信计算技术，能够使交换过程中的数据不可复制、不可迁移、也不可见，以保证医疗数据可以进行跨机构、跨地区以及跨境的可信数据交换。LEBEN（同医）目前已与安贞医院等重点医疗机构合作开发了“CHDr.（先心安）”、“外科大数据辅助（暂定名）”、“脑卒中项目（暂定名）”等多项医疗场景应用。</p>
           <p>LKBT将独家为 LEBEN平台打造数据资产交易金融基础设施，全面为LEBEN平台参与方提供底层交易计算服务。</p>
         </div>
@@ -87,7 +87,7 @@
     <div class="team">
       <div class="box">
         <div class="title core_team">核心团队</div>
-        <ul>
+        <ul :class="{show: boxShow >= 4}">
           <li>
             <div>
               <div class="img lang"></div>
@@ -112,7 +112,7 @@
         </ul>
       </div>
     </div>
-    <Footer />
+    <FooterBox />
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
   </div>
 </template>
@@ -120,14 +120,14 @@
 <script>
 // @ is an alias to /src
 import Top from '@/components/Top.vue'
-import Footer from '@/components/Footer.vue'
+import FooterBox from '@/components/Footer.vue'
 import observer from "@/utils/observer";
 
 export default {
   name: 'home',
   components: {
     Top,
-    Footer
+    FooterBox
   },
   mounted() {
     let detail = document.querySelector('.detail');
@@ -135,40 +135,40 @@ export default {
     observer(this);
     this.onChangeNet(0);
     window.addEventListener('scroll', this.onScroll);
-    
-    
   },
   data() {
     return {
       netInfo: null,
       scroll: 0,
+      boxShow: 0,
       offset: 0,
+      boxs: [0, 470, 2440, 3312, 4642],
       loadAnimate: false,
       net: [
         {
           name: 'btn1',
           title: '安全机制',
-          content: '区块链能构筑安全、可信的存储与交易网络的核心是其安全机制和密码算法，LKBT采用了可扩展哈希函数、可插拔公钥密码'
+          content: '区块链能构筑安全、可信的存储与交易网络的核心是其安全机制和密码算法，LKBT采用了可扩展哈希函数、可插拔公钥密码技术及环签名等智能合约隐私保护技术，从而提供一个；安全高效的交易网络。'
         },
         {
           name: 'btn2',
           title: '共识机制',
-          content: 'LKBT采用LkbtBFT共识协议的BFT机制来实现所有验证者节点就将要执行的交易及其执行顺序达成一致。Lkbt'
+          content: 'LKBT采用LkbtBFT共识协议的BFT机制来实现所有验证者节点就将要执行的交易及其执行顺序达成一致。LkbtBFT共识协议能在高交易处理量、低延迟和更高效之间达成一个平衡。'
         },
         {
           name: 'btn3',
           title: '目录索引链',
-          content: '目录索引链，是数据、知识、算法资产化的可信存储媒介，是资产形式化后的可信流通渠道，是可交换资产价值发掘的可信交易'
+          content: '目录索引链，是数据、知识、算法资产化的可信存储媒介，是资产形式化后的可信流通渠道，是可交换资产价值发掘的可信交易链条，通过区块链技术真正实现数据资产化，从而为主体之间实现资产确权、完成资产的有效流转。'
         },
         {
           name: 'btn4',
-          title: '安全机制',
-          content: '区块链能构筑安全、可信的存储与交易网络的核心是其安全机制和密码算法，LKBT采用了可扩展哈希函数、可插拔公钥密码'
+          title: '智能合约',
+          content: 'LKBT区块链兼容Solidity智能合约，并在此基础上加以扩展，支持私有智能合约。私有合约定义联盟，只在联盟内可见，合约数据只保存在私有DB上，不会把隐私数据全网分发。实现公开交易全网一致共识，私有交易局部共识，隐私数据得已保护。'
         },
         {
           name: 'btn5',
           title: '网关与稳定币',
-          content: '一体化稳定币平台是LKBT构建互操作性经济生态系统的重要部分。将通过资产网关，对接已经存在的稳定币例如Libra'
+          content: '一体化稳定币平台是LKBT构建互操作性经济生态系统的重要部分。将通过资产网关，对接已经存在的稳定币例如Libra、USDT、TUDS、Dai等，通过LKBT区块链来映射资产，与之共享数字经济成果。'
         }
       ],
     }
@@ -178,11 +178,19 @@ export default {
       this.$data.netInfo = this.$data.net[i];
     },
     onScroll() {
-      let top;
-      this.$data.scroll = document.documentElement.scrollTop || document.body.scrollTop;
+      let top, index = 0;
+      let boxs = this.boxs;
+      let scroll = this.$data.scroll = document.documentElement.scrollTop || document.body.scrollTop;
       top = this.offset - this.scroll + 100;
-      if (top < 0) this.$data.loadAnimate = true;
-      console.log('--- top', );
+      for (let i = 0; i < boxs.length; i++) {
+        if (boxs[i] > scroll) {
+          break
+        } else {
+          index = i;
+        }
+      }
+      this.$data.boxShow = index;
+      this.$data.loadAnimate = top < 0 ? true : false;
     }
   }
 }
@@ -197,6 +205,15 @@ export default {
     clear: both;
   }
 }
+.onShow{
+  opacity: 0;
+  transform: translateY(50%);
+  transition: all .5s ease-out;
+  &.show{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 .home{
   position: relative;
   .box{
@@ -204,6 +221,7 @@ export default {
     margin: 0 auto;
   }
   .banner{
+    margin-top: 90px;
     height: 751px;
     background: url(../assets/banner.jpg) no-repeat center;
   }
@@ -222,6 +240,7 @@ export default {
   .future{
     height: 612px;
     background: url(../assets/data_bg.png) no-repeat center;
+    .onShow;
     .stars{
       position: relative;
       span{
@@ -368,6 +387,7 @@ export default {
   }
   .net{
     .clear;
+    .onShow;
     padding-top: 90px;
     margin-bottom: 105px;
     .left {
@@ -378,10 +398,27 @@ export default {
       float: left;
       .btn{
         .button_style;
-        transition: all .15s ease-out;
+        transition: transform .15s ease-out;
         border-radius: 100%;
         position: absolute;
+        animation: show 1s ease-out infinite alternate;
+        &.btn01{
+          animation-duration: 1s;
+        }
+        &.btn02{
+          animation-duration: .8s;
+        }
+        &.btn03{
+          animation-duration: .2s;
+        }
+        &.btn04{
+          animation-duration: .9s;
+        }
+        &.btn05{
+          animation-duration: .5s;
+        }
         &.on{
+          animation: none;
           transform: scale(1.5);
           div{
             i{
@@ -410,7 +447,7 @@ export default {
           left: 204px;
           & > div {
             i{
-              background-image: url(../assets/icon2_1.png);
+              background-image: url(../assets/icon2_2.png);
               background-position: center 40%;
             }
           }
@@ -420,7 +457,7 @@ export default {
           left: 180px;
           & > div {
             i{
-              background-image: url(../assets/icon2_2.png);
+              background-image: url(../assets/icon2_1.png);
             }
           }
         }
@@ -488,12 +525,14 @@ export default {
     padding-bottom: 150px;
     background: #f4fcfc url(../assets/bg2_top.png) no-repeat center top;
     .app_detail_cover{
+      .onShow;
       margin-top: 94px;
       padding: 96px 65px;
       background: #e9fbfb;
       border-radius: 10px;
     }
     .app_detail{
+      .onShow;
       padding-top: 70px;
       p{
         text-indent: 2em;
@@ -528,12 +567,14 @@ export default {
     }
   }
   .team{
+    
       background: url(../assets/team.jpg) no-repeat center top;
       box-sizing: border-box;
       padding-bottom: 300px;
       padding-top: 150px;
       .clear;
       ul{
+        .onShow;
         .clear;
         padding-bottom: 200px;
         li{
@@ -592,6 +633,17 @@ export default {
   }
   to{
     opacity: 0.05;
+  }
+}
+
+@keyframes show {
+  from{
+    opacity: .8;
+    transform: scale(1);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1.05);
   }
 }
 </style>

@@ -64,7 +64,7 @@
       </div>
     </div>
     <div class="footer_bg"></div>
-    <Footer />
+    <FooterBox />
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
   </div>
 </template>
@@ -72,14 +72,14 @@
 <script>
 // @ is an alias to /src
 import Top from '@/components/Top.vue'
-import Footer from '@/components/Footer.vue'
+import FooterBox from '@/components/Footer.vue'
 import observer from "@/utils/observer";
 
 export default {
   name: 'applicationscenaios',
   components: {
     Top,
-    Footer
+    FooterBox
   },
   mounted() {
     observer(this);
@@ -136,6 +136,7 @@ export default {
   }
   .banner{
     height: 751px;
+    margin-top: 90px;
     background: url(../assets/leben_banner.jpg) no-repeat center;
   }
   .transition{transition: all .3s ease-out}
