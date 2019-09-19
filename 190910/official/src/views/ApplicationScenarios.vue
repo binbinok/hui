@@ -63,8 +63,7 @@
         </h2>
       </div>
     </div>
-    <div class="footer_bg"></div>
-    <FooterBox />
+    <FooterBox footer-class="relative" />
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
   </div>
 </template>

@@ -1,19 +1,28 @@
 <template>
-    <div class="footer_box">
-        <div class="share">
-            <a href="https://mp.weixin.qq.com/s?__biz=Mzg2NTE3MzM3Nw==&mid=100000009&idx=1&sn=79505ff590a72f705d12d9ec834c2508&chksm=" target="_blank" class="weixin">&#xe893;</a>
-            <a href="https://weibo.com/5953111811/profile?topnav=1&wvr=6" target="_blank"  class="weibo">&#xe62a;</a>
-            <a href="https://twitter.com/LKBT__" target="_blank"  class="twitter">&#xe652;</a>
-            <a href="https://medium.com/@lkbt2019" target="_blank"  class="medium">&#xeb7b;</a>
-        </div>
-        <h6>Copyright © 2019 the LKBT Team</h6>
+  <div :class="{'footer_box': true, [footerClass]: !!footerClass}">
+    <div class="share">
+      <a
+        href="https://mp.weixin.qq.com/s?__biz=Mzg2NTE3MzM3Nw==&mid=100000009&idx=1&sn=79505ff590a72f705d12d9ec834c2508&chksm="
+        target="_blank"
+        class="weixin"
+      >&#xe893;</a>
+      <a
+        href="https://weibo.com/5953111811/profile?topnav=1&wvr=6"
+        target="_blank"
+        class="weibo"
+      >&#xe62a;</a>
+      <a href="https://twitter.com/LKBT__" target="_blank" class="twitter">&#xe652;</a>
+      <a href="https://medium.com/@lkbt2019" target="_blank" class="medium">&#xeb7b;</a>
     </div>
+    <h6>Copyright © 2019 the LKBT Team</h6>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'footer_box'
-}
+  name: "footer_box",
+  props: ["footerClass"]
+};
 </script>
 
 <style lang="less">
@@ -24,6 +33,13 @@ export default {
     left: 0;
     bottom: 0;
     padding-bottom: 80px;
+    &.relative{
+        position: relative;
+        height: 420px;
+        box-sizing: border-box;
+        padding-top: 120px;
+        background: url(../assets/footer_bg.jpg) no-repeat center;
+    }
     .iconfont {
         font-family: "iconfont" !important;
         font-size: 16px;

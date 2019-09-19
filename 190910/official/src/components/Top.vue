@@ -1,15 +1,23 @@
 <template>
-    <div class="top">
+    <div :class="{'top': true, [footerClass]: !!footerClass}">
       <div class="box">
         <div class="nav">
             <span><router-link to="/">首页</router-link></span>
             <span><router-link to="/applicationscenaios">应用场景</router-link></span>
-            <span><a href="/dist/file/LKBT.pfd" target="_blank">白皮书</a></span>
+            <span><router-link to="/newsList">动态</router-link></span>
+            <span><a href="http://52.77.230.193/LKBTWhitePaper.pdf" target="_blank">白皮书</a></span>
         </div>
         <a class="logo" data-observer-type="fixBottom" href="/"></a>
       </div>
     </div>
 </template>
+
+<script>
+export default {
+  name: 'top',
+  props: ["footerClass"]
+}
+</script>
 
 <style lang="less">
 .box{
