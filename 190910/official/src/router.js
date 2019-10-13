@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import { isMobile } from "./utils/ua";
+console.log('===', isMobile);
+
+if(isMobile) import('./utils/rem');
+
+let loadView = viewName => isMobile ? import('./views/mobile/' + viewName) : import('./views/pc/' + viewName);
 
 Vue.use(Router)
 
@@ -11,7 +16,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => loadView('Home.vue')
     },
     {
       path: '/applicationscenaios',
@@ -19,7 +24,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/ApplicationScenarios.vue')
+      component: () => loadView('ApplicationScenarios.vue')
     },
     {
       path: '/newsList',
@@ -27,7 +32,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/NewsList.vue')
+      component: () => loadView('NewsList.vue')
     },
     {
       path: '/newsDetail',
@@ -35,7 +40,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/NewsDetail.vue')
+      component: () => loadView('NewsDetail.vue')
     }
   ]
 })

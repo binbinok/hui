@@ -27,7 +27,7 @@
           <li>
             <div>
               <div class="icon">
-                <div><img src="../assets/leben_icon1.png" alt=""></div>
+                <div><img src="../../assets/leben_icon1.png" alt=""></div>
               </div>
               <h2>CHDr（先心安）</h2>
             </div>
@@ -35,7 +35,7 @@
           <li>
             <div>
               <div class="icon">
-                <div><img src="../assets/leben_icon2.png" alt=""></div>
+                <div><img src="../../assets/leben_icon2.png" alt=""></div>
               </div>
               <h2>StrokeDr（脑卒中）</h2>
             </div>
@@ -43,7 +43,7 @@
           <li>
             <div>
               <div class="icon">
-                <div><img src="../assets/leben_icon3.png" alt=""></div>
+                <div><img src="../../assets/leben_icon3.png" alt=""></div>
               </div>
               <h2>外科大数据辅助</h2>
             </div>
@@ -64,14 +64,14 @@
       </div>
     </div>
     <FooterBox footer-class="relative" />
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+    <!-- <img alt="Vue logo" src="../../assets/logo.png"> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Top from '@/components/Top.vue'
-import FooterBox from '@/components/Footer.vue'
+import Top from '@/components/pc/Top.vue'
+import FooterBox from '@/components/pc/Footer.vue'
 import observer from "@/utils/observer";
 
 export default {
@@ -119,6 +119,7 @@ export default {
 </script>
 
 <style lang="less">
+@import url('./common.less');
 .clear{
   &::after{
     content: '';
@@ -136,7 +137,7 @@ export default {
   .banner{
     height: 751px;
     margin-top: 90px;
-    background: url(../assets/leben_banner.jpg) no-repeat center;
+    background: url(../../assets/leben_banner.jpg) no-repeat center;
   }
   .transition{transition: all .3s ease-out}
   .button_style{
@@ -156,7 +157,7 @@ export default {
       width: 475px;
       float: left;
       height: 500px;
-      background: url(../assets/leben_img.jpg) no-repeat center;
+      background: url(../../assets/leben_img.jpg) no-repeat center;
       margin-left: 24px;
     }
     .right{
@@ -177,7 +178,7 @@ export default {
 
   .future{
     height: 612px;
-    background: url(../assets/data_bg.png) no-repeat center;
+    background: url(../../assets/data_bg.png) no-repeat center;
     .box{
       .clear;
       .stars{
@@ -308,7 +309,7 @@ export default {
   .detail{
     padding-top: 172px;
     padding-bottom: 152px;
-    background: url(../assets/bg_top.png) no-repeat top center;
+    background: url(../../assets/bg_top.png) no-repeat top center;
     background-color: #f4fcfc;
     & > div{
       .box;
@@ -316,7 +317,7 @@ export default {
     }
     h2{
       height: 578px;
-      background: url(../assets/map.jpg) no-repeat right top;
+      background: url(../../assets/map.jpg) no-repeat right top;
       padding-right: 574px;
       p{
         width: 580px;
@@ -332,7 +333,7 @@ export default {
   }
   .footer_bg{
     height: 420px;
-    background: url(../assets/footer_bg.jpg) no-repeat center;
+    background: url(../../assets/footer_bg.jpg) no-repeat center;
   }
 }
 

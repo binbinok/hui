@@ -1,23 +1,17 @@
 <template>
   <div class="home">
     <Top/>
-    <div class="banner"></div>
+    <div class="banner"><img src="../../assets/mobile/home/banner.jpg" alt=""></div>
     <div class="box">
       <div class="title future_data_assets">未来数据资产</div>
     </div>
     <div :class="{future: true, show: boxShow >= 1}">
       <div class="box">
-        <div class="stars">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
         <ul>
           <li>
             <div>
               <div class="icon">
-                <div><img src="../assets/icon1_1.png" alt=""></div>
+                <div><img src="../../assets/icon1_1.png" alt=""></div>
               </div>
               <h2>知识</h2>
               <p>符合文明方向的人类对物质世界及精神世界探索的结果总和</p>
@@ -26,7 +20,7 @@
           <li>
             <div>
               <div class="icon">
-                <div><img src="../assets/icon1_2.png" alt=""></div>
+                <div><img src="../../assets/icon1_2.png" alt=""></div>
               </div>
               <h2>算法</h2>
               <p>解决方案的准确完整描述和一系列解决问题的清晰指令</p>
@@ -35,7 +29,7 @@
           <li>
             <div>
               <div class="icon">
-                <div><img src="../assets/icon1_3.png" alt=""></div>
+                <div><img src="../../assets/icon1_3.png" alt=""></div>
               </div>
               <h2>算力</h2>
               <p>分布在不同地方的存储资源和计算资源</p>
@@ -44,26 +38,21 @@
         </ul>
       </div>
     </div>
-    <div class="detail">
-      <div>
-        <h2>
-          <p>LKBT是为数据资产交易平台服务的金融基础设施，实现数据资产的可信交易和记账服务，可与各类知识计算化操作系统和数据资产交易系统无缝连接。</p>
-        </h2>
-        <div :class="{icons: true, show: loadAnimate}"></div>
-      </div>
-    </div>
+    <div class="map"></div>
     <div class="box">
       <div class="title technical_system">技术体系</div>
       <div :class="{net: true, show: boxShow >= 2}">
-        <div class="left">
-          <div v-for="(n, index) in net" :class="{'btn'
-          : true, [n.name]: true, on: netInfo && n.name == netInfo.name}" :key="index" @click="onChangeNet(index)">
-            <div><i></i></div>
+        <div class="clear" v-for="(n, index) in net" :key="index">
+          <div class="left">
+            <div :class="{'btn'
+            : true, [n.name]: true}">
+              <div><i></i></div>
+            </div>
           </div>
-        </div>
-        <div class="right" v-show="netInfo">
-          <h3><span>{{ netInfo && netInfo.title }}</span></h3>
-          <p>{{ netInfo && netInfo.content }}</p>
+          <div class="right">
+            <h3><span>{{ n.title }}</span></h3>
+            <p>{{ n.content }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -71,15 +60,15 @@
       <div class="box">
         <div class="title application_scenarios">应用场景</div>
         <div class="app_detail_cover" :class="{app_detail_cover: true, show: boxShow >= 3}">
-          <img src="../assets/application.png" alt="">
+          <img src="../../assets/application.png" alt="">
         </div>
         <div class="app_detail" :class="{app_detail: true, show: boxShow >= 3}">
           <p>LKBT首选的合作伙伴是以“全球医疗均质化”为核心愿景的医疗智能合约协作平台——LEBEN（同医）,LEBEN的可信计算技术，能够使交换过程中的数据不可复制、不可迁移、也不可见，以保证医疗数据可以进行跨机构、跨地区以及跨境的可信数据交换。LEBEN（同医）目前已与安贞医院等重点医疗机构合作开发了“CHDr.（先心安）”、“外科大数据辅助（暂定名）”、“脑卒中项目（暂定名）”等多项医疗场景应用。</p>
           <p>LKBT将独家为 LEBEN平台打造数据资产交易金融基础设施，全面为LEBEN平台参与方提供底层交易计算服务。</p>
-        </div>
-        <div class="app_btn">
-          <div>
-            <a href="#">了解更多</a>
+          <div class="app_btn">
+            <div>
+              <a href="#">了解更多</a>
+            </div>
           </div>
         </div>
       </div>
@@ -113,14 +102,14 @@
       </div>
     </div>
     <FooterBox />
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+    <!-- <img alt="Vue logo" src="../../assets/logo.png"> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Top from '@/components/Top.vue'
-import FooterBox from '@/components/Footer.vue'
+import Top from '@/components/mobile/Top.vue'
+import FooterBox from '@/components/mobile/Footer.vue'
 import observer from "@/utils/observer";
 
 export default {
@@ -133,7 +122,6 @@ export default {
     let detail = document.querySelector('.detail');
     this.$data.offset = detail.offsetTop;
     observer(this);
-    this.onChangeNet(0);
     window.addEventListener('scroll', this.onScroll);
   },
   data() {
@@ -174,9 +162,6 @@ export default {
     }
   },
   methods: {
-    onChangeNet(i){
-      this.$data.netInfo = this.$data.net[i];
-    },
     onScroll() {
       let top, index = 0;
       let boxs = this.boxs;
@@ -214,16 +199,50 @@ export default {
     transform: translateY(0%);
   }
 }
+.img{
+  width: 100%;
+}
+.title{
+  font-size: 24px;
+  padding-top: 50px;
+  color: #43cfcd;
+  text-align: center;
+  margin: 50px 100px 0;
+  
+  &.future_data_assets{
+    background: url('../../assets/future_data_assets.png') no-repeat center;
+    background-size: contain;
+  }
+  &.technical_system{
+    background: url('../../assets/technical_system.png') no-repeat center;
+    background-size: contain;
+  }
+  &.application_scenarios{
+    background: url('../../assets/application_scenarios.png') no-repeat center;
+    background-size: contain;
+  }
+  &.what_is_leben{
+    background: url('../../assets/what_is_leben.png') no-repeat center;
+    background-size: contain;
+  }
+  &.core_team{
+    margin-top: 0;
+    color: #fff;
+    background: url('../../assets/core_team.png') no-repeat center;
+    background-size: contain;
+  }
+  
+}
 .home{
   position: relative;
   .box{
-    width: 1202px;
     margin: 0 auto;
   }
   .banner{
     margin-top: 90px;
-    height: 751px;
-    background: url(../assets/banner.jpg) no-repeat center;
+    img{
+      .img
+    }
   }
   .transition{transition: all .3s ease-out}
   
@@ -238,9 +257,9 @@ export default {
     }
   }
   .future{
-    height: 612px;
-    background: url(../assets/data_bg.png) no-repeat center;
-    .onShow;
+    background: url(../../assets/mobile/home/future.png) no-repeat center 10%;
+    background-size: 100% auto;
+    .clear;
     .stars{
       position: relative;
       span{
@@ -282,52 +301,27 @@ export default {
       }
     }
     li{
-      .button_style;
-      margin-right: 58px;
-      &:last-child{
-        margin-right: 0;
-      }
-      &:nth-child(1){
-        margin-top: 152px;
-      }
-      &:nth-child(3){
-        margin-top: 96px;
-      }
+      width: 33.33%;
+      float: left;
       & > div{
-        width: 332px;
-        height: 408px;
-        background: linear-gradient(120deg, #fff, #f4fcfc);
-
-        &:hover{
-          background: linear-gradient(120deg, #81d5d3, #6acddb);
-          .icon{
-            background: rgba(255, 213, 89, .8);
-            & > div {
-              background: linear-gradient(120deg, #fac73f, #f7d344);
-            }
-          }
-          h2{
-            color: #f8d143;
-          }
-          p{
-            color: #fff;
-          }
-        }
-
+        text-align: center;
         .icon{
           .button_style;
           background: rgba(186, 288, 234, .3);
           border-radius: 100%;
-          margin-top: 40px;
+          margin: 40px auto 0;
           & > div{
             width: 162px;
             height: 162px;
             line-height: 152px;
             border-radius: 100%;
             background: linear-gradient(120deg, #81d5d3, #6acddb);
+            text-align: center;
             img{
+              width: 60%;
               vertical-align: middle;
-              display: inline;
+              display: inline-block;
+              margin: 0 auto;
             }
           }
         }
@@ -335,9 +329,10 @@ export default {
           font-size: 26px;
           color: #70cccc;
           padding-top: 24px;
+          text-align: center;
         }
         p{
-          padding: 15px 60px;
+          padding: 15px;
           font-size: 20px;
           color: #737373;
           line-height: 1.5em;
@@ -345,10 +340,17 @@ export default {
       }
     }
   }
+  .map{
+    width: 750px;
+    height: 626px;
+    margin: 30px 0;
+    background: url(../../assets/mobile/home/map.jpg) no-repeat center;
+    background-size: contain;
+  }
   .detail{
     padding-top: 172px;
     padding-bottom: 458px;
-    background: url(../assets/bg_top.png) no-repeat top center, url(../assets/bg_bottom.png) no-repeat center bottom;
+    background: url(../../assets/bg_top.png) no-repeat top center, url(../../assets/bg_bottom.png) no-repeat center bottom;
     background-color: #f4fcfc;
     & > div{
       .box;
@@ -356,7 +358,7 @@ export default {
     }
     h2{
       height: 444px;
-      background: url(../assets/logo2.png) no-repeat 30px top;
+      background: url(../../assets/logo2.png) no-repeat 30px top;
       padding-left: 600px;
       p{
         padding: 150px 10px 0 140px;
@@ -371,37 +373,28 @@ export default {
     .icons{
       width: 662px;
       height: 421px;
-      background: url(../assets/icons.png) no-repeat;
+      background: url(../../assets/icons.png) no-repeat;
       position: absolute;
       top: 398px;
       left: 444px;
       z-index: 2;
-      transform: translateY(100%);
-      opacity: 0;
       transition: all 1s ease-out;
-      &.show{
-        transform: translateY(0);
-        opacity: 1;
-      }
     }
   }
   .net{
     .clear;
-    .onShow;
     padding-top: 90px;
     margin-bottom: 105px;
     .left {
-      width: 600px;
-      height: 585px;
+      width: 112px;
+      padding-left: 52px;
+      padding-top: 36px;
       position: relative;
-      background: url(../assets/net.png) no-repeat 0 0;
       float: left;
       .btn{
         .button_style;
         transition: transform .15s ease-out;
         border-radius: 100%;
-        position: absolute;
-        animation: show 1s ease-out infinite alternate;
         &.btn01{
           animation-duration: 1s;
         }
@@ -417,15 +410,6 @@ export default {
         &.btn05{
           animation-duration: .5s;
         }
-        &.on{
-          animation: none;
-          transform: scale(1.5);
-          div{
-            i{
-              opacity: 1;
-            }
-          }
-        }
         & > div{
           width: 84px;
           height: 84px;
@@ -439,62 +423,51 @@ export default {
             background-position: center;
             background-repeat: no-repeat;
             background-size: 60% auto;
-            opacity: .5;
           }
         }
         &.btn1{
-          top: 20px;
-          left: 204px;
           & > div {
             i{
-              background-image: url(../assets/icon2_2.png);
+              background-image: url(../../assets/icon2_2.png);
               background-position: center 40%;
             }
           }
         }
         &.btn2{
-          top: 218px;
-          left: 180px;
           & > div {
             i{
-              background-image: url(../assets/icon2_1.png);
+              background-image: url(../../assets/icon2_1.png);
             }
           }
         }
         &.btn3{
-          top: 190px;
-          left: 390px;
           & > div {
             i{
-              background-image: url(../assets/icon2_3.png);
+              background-image: url(../../assets/icon2_3.png);
               background-position: 65% center;
             }
           }
         }
         &.btn4{
-          top: 415px;
-          left: 124px;
           & > div {
             i{
-              background-image: url(../assets/icon2_4.png);
+              background-image: url(../../assets/icon2_4.png);
             }
           }
         }
         &.btn5{
-          top: 434px;
-          left: 434px;
           & > div {
             i{
-              background-image: url(../assets/icon2_5.png);
+              background-image: url(../../assets/icon2_5.png);
             }
           }
         }
       }
     }
     .right{
-      padding-left: 62px;
-      padding-top: 160px;
-      width: 528px;
+      padding-left: 24px;
+      padding-bottom: 50px;
+      width: 512px;
       float: left;
       h3{
         height: 26px;
@@ -511,7 +484,7 @@ export default {
         }
       }
       p{
-        padding-top: 50px;
+        padding-top: 20px;
         font-size: 24px;
         color: #737373;
         line-height: 1.5em;
@@ -521,67 +494,76 @@ export default {
     }
   }
   .application{
-    padding-top: 40px;
-    padding-bottom: 150px;
-    background: #f4fcfc url(../assets/bg2_top.png) no-repeat center top;
+    padding: 40px 20px;
+    background: #f4fcfc url(../../assets/bg2_top.png) no-repeat center top;
+    background-size: contain;
     .app_detail_cover{
-      .onShow;
-      margin-top: 94px;
-      padding: 96px 65px;
+      margin-top: 40px;
+      padding: 20px;
       background: #e9fbfb;
       border-radius: 10px;
+      text-align: center;
+      img{
+        width: 90%;
+        margin: 0 auto;
+      }
     }
     .app_detail{
-      .onShow;
-      padding-top: 70px;
+      padding: 20px;
+      background: #fff;
+      border: 4px solid #e6f4f6;/*no*/
+      border-radius: 20px;
+      margin-top: 30px;
+      text-align: center;
       p{
+        border-radius: 20px;
         text-indent: 2em;
         text-align: left;
         line-height: 1.5em;
         color: #70cccc;
         font-size: 24px;
       }
-    }
-    .app_btn{
-      .button_style;
-      border-radius: 45px;
-      margin-top: 106px;
-      &:hover{
-        transform: scale(1.05);
-        transition: transform .15s ease-out;
-      }
-      & > div {
+      .app_btn{
+        .button_style;
         border-radius: 35px;
-        background: linear-gradient(120deg, #81d5d3, #6acddb);
-        width: 504px;
-        height: 114px;
-        line-height: 114px;
-        color: #fff;
-        font-size: 42px;
-        font-weight: bold;
-        a{
+        margin: 30px auto 0;
+        &:hover{
+          transform: scale(1.05);
+          transition: transform .15s ease-out;
+        }
+        & > div {
+          border-radius: 25px;
+          background: linear-gradient(120deg, #81d5d3, #6acddb);
+          width: 300px;
+          height: 68px;
+          line-height: 68px;
           color: #fff;
-          display: block;
+          font-size: 32px;
+          font-weight: bold;
+          a{
+            text-align: center;
+            color: #fff;
+            display: block;
+          }
         }
       }
     }
   }
   .team{
-    
-      background: url(../assets/team.jpg) no-repeat center top;
+      background: url(../../assets/team.jpg) no-repeat center top;
       box-sizing: border-box;
-      padding-bottom: 300px;
-      padding-top: 150px;
+      background-size: cover;
+      padding-bottom: 180px;
+      padding-top: 100px;
       .clear;
       ul{
-        .onShow;
         .clear;
-        padding-bottom: 200px;
+        padding:60px 20px 50px;
         li{
           .button_style;
           display: block;
           float: left;
-          margin-right: 60px;
+          margin-right: 15px;
           transition: transform .15s ease-out;
           &:last-child{
             margin-right: 0;
@@ -590,23 +572,23 @@ export default {
             transform: scale(1.05);
           }
           & > div {
-            width: 330px;
-            height: 358px;
+            width: 210px;
             background: #43cfcd;
             .img{
               width: 100%;
-              height: 258px;
+              height: 160px;
               background: #fff no-repeat center;
               border-top-left-radius: 15px;
               border-top-right-radius: 15px;
+              background-size: 120px auto;
               &.lang{
-                background-image: url(../assets/lang.png)
+                background-image: url(../../assets/lang.png)
               }
               &.justin{
-                background-image: url(../assets/justin.png)
+                background-image: url(../../assets/justin.png)
               }
               &.evan{
-                background-image: url(../assets/evan.png)
+                background-image: url(../../assets/evan.png)
               }
             }
             h2{
@@ -620,6 +602,7 @@ export default {
               text-align: center;
               color: #fff;
               font-size: 20px;
+              padding-bottom: 20px;
             }
           }
         }

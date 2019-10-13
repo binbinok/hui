@@ -39,7 +39,7 @@ export default {
     width: 177px;
     height: 59px;
     margin-top: 14px;
-    background: url('../assets/logo.png') no-repeat center;
+    background: url('../../assets/logo.png') no-repeat center;
     display: block;
     margin-left: 110px;
     border-bottom-left-radius: 19px;

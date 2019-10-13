@@ -38,7 +38,7 @@ export default {
         height: 420px;
         box-sizing: border-box;
         padding-top: 120px;
-        background: url(../assets/footer_bg.jpg) no-repeat center;
+        background: url(../../assets/footer_bg.jpg) no-repeat center;
     }
     .iconfont {
         font-family: "iconfont" !important;
@@ -79,11 +79,11 @@ export default {
 }
 @font-face {
   font-family: 'iconfont';
-  src: url('../assets/font/iconfont.eot');
-  src: url('../assets/font/iconfont.eot?#iefix') format('embedded-opentype'),
-      url('../assets/font/iconfont.woff2') format('woff2'),
-      url('../assets/font/iconfont.woff') format('woff'),
-      url('../assets/font/iconfont.ttf') format('truetype'),
-      url('../assets/font/iconfont.svg#iconfont') format('svg');
+  src: url('../../assets/font/iconfont.eot');
+  src: url('../../assets/font/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('../../assets/font/iconfont.woff2') format('woff2'),
+      url('../../assets/font/iconfont.woff') format('woff'),
+      url('../../assets/font/iconfont.ttf') format('truetype'),
+      url('../../assets/font/iconfont.svg#iconfont') format('svg');
 }
 </style>

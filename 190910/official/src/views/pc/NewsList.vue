@@ -6,12 +6,12 @@
       <ul class="list">
         <li v-for="(n, index) in list" :key="index">
           <div class="news">
-            <div class="news_img"><img :src="news[n].thumbnail" alt=""></div>
-            <h2><router-link :to="{'name': 'newsDetail', query: {newsId: news[n].id}}">{{ news[n].title }}</router-link></h2>
-            <p>{{ news[n].intro }}</p>
+            <div class="news_img"><img :src="n.better_featured_image.source_url" alt=""></div>
+            <h2><router-link :to="{'name': 'newsDetail', query: {newsId: n.id}}">{{ n.title.rendered }}</router-link></h2>
+            <p v-html="n.excerpt.rendered"></p>
             <h5>
-              [{{ news[n].date }}]
-              <router-link :to="{'name': 'newsDetail', query: {newsId: news[n].id}}">更多详情 >></router-link>
+              [{{ n.date }}]
+              <router-link :to="{'name': 'newsDetail', query: {newsId: n.id}}">更多详情 >></router-link>
             </h5>
           </div>
         </li>
@@ -22,10 +22,9 @@
 </template>
 
 <script>
-import Top from "@/components/Top.vue";
-import FooterBox from "@/components/Footer.vue";
-import {list, news} from "../newsData";
-console.log('news data ', list, news);
+import Top from "@/components/pc/Top.vue";
+import FooterBox from "@/components/pc/Footer.vue";
+import { loadNews } from "@/utils/server";
 export default {
   name: 'newsList',
   components: {
@@ -34,9 +33,13 @@ export default {
   },
   data() {
     return {
-      list,
-      news
+      list: []
     }
+  },
+  created() {
+    loadNews('http://api.lkbt.pro/wp-json/wp/v2/posts?categories=4&page=1').then(res => {
+      this.list = res.data;
+    }).catch(error => console.error(error));
   }
 }
 </script>
@@ -58,7 +61,7 @@ export default {
   .banner {
     height: 355px;
     margin-top: 90px;
-    background: url(../assets/news/banner.png) no-repeat center;
+    background: url(../../assets/news/banner.png) no-repeat center;
   }
   .list{
     padding: 130px 0;
@@ -87,7 +90,7 @@ export default {
             color: #5c5b5b;
           }
         }
-        p{
+        & > p{
           padding-top: 20px;
           line-height: 30px;
           font-size: 18px;

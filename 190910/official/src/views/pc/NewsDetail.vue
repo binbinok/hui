@@ -3,14 +3,14 @@
     <Top />
     <div class="banner"></div>
     <div class="box">
-      <div class="news">
+      <div class="news" v-if="news">
         <header>
           <span>{{news.date}}</span>
           新闻动态 > <em>新闻详情</em>
         </header>
         <div class="centent">
-          <h1>{{ news.title }}</h1>
-          <div v-html="news.content"></div>
+          <h1>{{ news.title.rendered }}</h1>
+          <div v-html="news.content.rendered"></div>
         </div>
       </div>
     </div>
@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import Top from "@/components/Top.vue";
-import FooterBox from "@/components/Footer.vue";
-import {news} from "../newsData";
+import Top from "@/components/pc/Top.vue";
+import FooterBox from "@/components/pc/Footer.vue";
+import { loadNews } from "@/utils/server";
 
 export default {
   name: 'newsList',
@@ -31,17 +31,20 @@ export default {
   },
   data() {
     return {
-      newsId: null,
+      news: null,
     }
   },
   created() {
-    this.news = news[`news${this.$route.query.newsId}`];
-    console.log('query -- ', this.news);
+    loadNews('http://api.lkbt.pro/wp-json/wp/v2/posts?categories=4&page=1').then(res => {
+      this.news = res.data.find(n => n.id === +this.$route.query.newsId);
+      console.log('---', this.news);
+    }).catch(error => console.error(error));
   }
 }
 </script>
 
 <style lang="less">
+@import url('./common.less');
 .clear{
   &::after{
     content: '';
@@ -58,7 +61,7 @@ export default {
   .banner {
     height: 355px;
     margin-top: 90px;
-    background: url(../assets/news/banner.png) no-repeat center;
+    background: url(../../assets/news/banner.png) no-repeat center;
   }
   .news{
     header{
