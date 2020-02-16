@@ -3,11 +3,9 @@
     <Top/>
     <div class="banner"></div>
     <div class="box">
-      <div class="title what_is_leben">什么是LEBEN</div>
+      <div class="title leben">LEBEN</div>
       <div class="what">
-        <div class="left">
-
-        </div>
+        <div class="left"></div>
         <div class="right">
           <p>LEBEN是一个以“医疗知识深度共享”与“医疗数据可信交换”为主要技术特点的，融合了人工智能技术与大数据的，面向全球的医疗产业智能合约协作平台。</p>
           <p>LEBEN的愿景为“全球医疗均质化”，此处“均质化”是指：在LEBEN平台的帮助下，让医疗条件并不发达地区的医疗水平，无限趋近于医疗条件发达的地区。</p>
@@ -23,7 +21,7 @@
           <span></span>
           <span></span>
         </div>
-        <ul>
+        <ul class="clear">
           <li>
             <div>
               <div class="icon">
@@ -49,18 +47,85 @@
             </div>
           </li>
         </ul>
-      </div>
-      <div class="app_btn">
-        <div>
-          <a href="https://leben.pro/" target="_blank">了解详情</a>
+        <div class="tit_box">
+          <span>LEBEN</span>
+          <h3>个人健康数据的确权与保护，全球主流国家均立法保障</h3>
+        </div>
+      
+        <div class="flow_img"><img src="../../assets/flow.png" alt=""></div>
+        <div class="flow_main">
+          <h2><span>数字货币系统部署</span></h2>
+          <p>LEBEN使用了TED Bank提供的银行核心系统，其用户使用其发行的数字货币支付各类医疗服务、保险服务等。</p>
+          <h3><span>用户使用习惯培养</span></h3>
+          <p>用户在使用各种服务的过程中已经熟稔使用个人身份签名认证的功能（TED SIM卡钱包及认证系统）。</p>
+          <h3><span>可信数据高频交换</span></h3>
+          <p>当医疗产业因商业应用发展需要向个人提出数据需求时，通过可信数据交换平台，在用户认可的情况下可以“计次”而非“拷贝”方式点对点支付数字货币获得使用权，这不但将形成大规模的高频超小额跨境支付行为，同时数据资产化的过程水到渠成。</p>
+          <h3><span>数据资产深化积累</span></h3>
+          <p>数据资产化的深化与积累，会让数据成集或成块，围绕数据资产的运用、交易甚至证券化将是客户与TED Bank共同开拓的下一个金矿。</p>
+        </div>
+        <div class="app_btn">
+          <div>
+            <a href="https://leben.pro/" target="_blank">了解详情</a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="detail">
-      <div>
-        <h2>
-          <p>LKBT将配合LEBEN的思维投影技术（Mind Project）将超级医生的知识变为可计算、可执行的临床决策路径，并实现远程投放。过程中应用链各方均会使用LKBT作为交易计算服务系统。随着LEBEN平台使用规模和需求的增加，LKBT价值也将持续升高。</p>
-        </h2>
+    <div class="du">
+      <div class="box">
+        <div class="title dupay">dupay</div>
+        <h3>为Du发行货币并覆盖整个交易经济体</h3>
+        <h5>
+            Du提供了这个城市绝大多数的基础数据通讯服务，并对所有用户完成了基础KYC <br>
+  城市居民30%以上与流动人口90%以上均没有本地银行卡或信用卡，但他们一定有Du的Sim卡 <br>
+  庞大的人口流动性与多种货币的小额跨境支付、汇款是任何一家银行也无法提供的服务场景 <br>
+  电商、娱乐、生活缴费、政府收费、医疗保险、交通出行等场景被现金支付形式严重束缚了发展进度
+        </h5>
+        <ul>
+          <li>
+            <h4><img src="../../assets/dupay_img1.jpg" alt=""></h4>
+            <p>
+              Du 迪拜最大的电信运营商<br>
+              覆盖GCC地区660万用户
+            </p>
+          </li>
+          <li>
+            <h4><img src="../../assets/dupay_img2.jpg" alt=""></h4>
+            <p>
+              迪拜总计430万人口 <br>
+              固定居民314万 流动人口116万
+            </p>
+          </li>
+          <li>
+            <h4><img src="../../assets/dupay_img3.jpg" alt=""></h4>
+            <p>
+              迪拜本地人仅有50万人<br>
+              近380万人为长期或短期务工人口
+            </p>
+          </li>
+        </ul>
+        <div class="dupay_flow"><img src="../../assets/dupay_flow.png" alt=""></div>
+      </div>
+    </div>
+    
+    <div class="group_box">
+      <div class="box">
+        <div class="title group">蓉欧集团</div>
+        <h3>LKBT为蓉欧集团建立银行核心系统并提供服务</h3>
+        <p>
+          提供人、货、单的软硬件身份认证系统<br>
+提供蓉欧集团商用数字货币（人民币、欧元等）发行、管理、兑换系统<br>
+提供蓉欧集团数据可信交换平台，实现跨网络跨国界的数据交换能力<br>
+提供蓉欧集团基于人工智能的物流方案生成与实施智能合约、贸易融资风险评估与服务实施智能合约等<br>
+利用蓉欧集团保证金对蓉欧专列经济体内部分优选企业提供金融服务<br>
+        </p>
+        <h5><img src="../../assets/group_img.jpg" alt=""></h5>
+        <p>
+          蓉欧快铁，2018年发车2619列，进出口贸易额超过1300亿，累计服务沿线超过5000家大小公司<br>
+成都蓉欧供应链集团有限公司作为成都市平台公司掌控所有运力资源<br>
+蓉欧集团拥有所有商品“门到站”的全供应链闭环数据<br>
+蓉欧集团拥有跟政府职能部门（海关、税务、工商）数据共享的资质与能力<br>
+蓉欧集团希望能为整个专列经济体提供更有力的金融服务与交易服务
+        </p>
       </div>
     </div>
     <FooterBox footer-class="relative" />
@@ -177,8 +242,8 @@ export default {
   }
 
   .future{
-    height: 612px;
-    background: url(../../assets/data_bg.png) no-repeat center;
+    background: url(../../assets/data_bg.png) no-repeat center -70px;
+    padding-bottom: 50px;
     .box{
       .clear;
       .stars{
@@ -220,6 +285,70 @@ export default {
             animation-duration: 2s;
           }
         }
+      }
+      .tit_box{
+        margin-top: 100px;
+        background: #f4fcfc;
+        border-radius: 5px;
+        line-height: 110px;
+        text-align: center;
+        clear: both;
+        span{
+          display: block;
+          width: 274px;
+          background: #7ed4d4;
+          float: left;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          color: #fff;
+          font-size: 36px;
+          font-weight: bold;
+        }
+        h3{
+          font-size: 30px;
+          color: #70cccc;
+          font-weight: normal;
+        }
+      }
+    }
+    .flow_img{
+      padding-top: 110px;
+    }
+    .flow_main{
+      h2, h3{
+        margin-top: 44px;
+        &::after{
+          content: '';
+          display: block;
+          clear: both;
+        }
+      }
+      h2 span, h3 span{
+        line-height: 24px;
+        display: block;
+        background: #fff;
+        font-size: 20px;
+        float: left;
+        padding-right: 15px;
+      }
+      h2{
+        background: #fcf7e6;
+      }
+      h3{
+        background: #f4fcfc;
+      }
+      h2 span{
+        color: #f8d143;
+      }
+      h3 span{
+        color: #70cccc;
+      }
+      p{
+        text-align: left;
+        padding-top: 20px;
+        font-size: 20px;
+        color: #737373;
+        line-height: 1.5em;
       }
     }
     .app_btn{
@@ -304,6 +433,65 @@ export default {
           line-height: 1.5em;
         }
       }
+    }
+  }
+  .du{
+    padding-top: 130px;
+    padding-bottom: 180px;
+    background: url(../../assets/bg3_top.png) no-repeat center top, url(../../assets/bg3_bottom.png) no-repeat center bottom;
+    background-color: #f4fcfc;
+    h3{
+      padding-top: 114px;
+      font-size: 26px;
+      color: #70cccc;
+    }
+    h5{
+      padding-top: 30px;
+      font-size: 20px;
+      color: #737373;
+      line-height: 1.5em;
+      font-weight: normal;
+    }
+    ul{
+      .clear;
+      padding-top: 60px;
+      li{
+        width: 352px;
+        float: left;
+        padding-right: 70px;
+        &:last-child{
+          padding-right: 0;
+        }
+        h4{
+          img{
+            border-radius: 38px;
+          }
+        }
+        p{
+          font-size: 20px;
+          color: #737373;
+          line-height: 1.6em;
+          padding-top: 40px;
+        }
+      }
+    }
+    .dupay_flow{
+      text-align: center;
+      padding-top: 190px;
+    }
+  }
+  .group_box{
+    padding: 80px 0;
+    h3{
+      padding-top: 100px;
+      font-size: 26px;
+      color: #70cccc;
+    }
+    p{
+      padding-top: 40px;
+      font-size: 20px;
+      line-height: 1.7em;
+      color: #737373;
     }
   }
   .detail{

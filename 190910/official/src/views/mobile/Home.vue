@@ -500,7 +500,7 @@ export default {
     .app_detail_cover{
       margin-top: 40px;
       padding: 20px;
-      background: #e9fbfb;
+      background: #f4fcfc;
       border-radius: 10px;
       text-align: center;
       img{

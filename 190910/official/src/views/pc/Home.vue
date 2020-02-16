@@ -3,7 +3,7 @@
     <Top/>
     <div class="banner"></div>
     <div class="box">
-      <div class="title future_data_assets">未来数据资产</div>
+      <div class="title tteod">数据可信交易环境</div>
     </div>
     <div :class="{future: true, show: boxShow >= 1}">
       <div class="box">
@@ -13,71 +13,95 @@
           <span></span>
           <span></span>
         </div>
-        <ul>
-          <li>
-            <div>
-              <div class="icon">
-                <div><img src="../../assets/icon1_1.png" alt=""></div>
+        <div class="main">
+          <div class="tit">数据可信交易环境</div>
+          <div class="i1">
+            <div class="icon">
+              <div>
+                <img src="../../assets/data_icon1.png" alt="">
               </div>
-              <h2>知识</h2>
-              <p>符合文明方向的人类对物质世界及精神世界探索的结果总和</p>
             </div>
-          </li>
-          <li>
-            <div>
-              <div class="icon">
-                <div><img src="../../assets/icon1_2.png" alt=""></div>
+            <div class="info">
+              <h2>数据三权分立</h2>
+              <p>通过使用“安全多方加密运算”、沙箱化的数据传输等技术，能够实现数据所有权、数据使用权与数据执行权的明确区分。</p>
+            </div>
+          </div>
+          <div class="i2">
+            <div class="icon">
+              <div>
+                <img src="../../assets/data_icon2.png" alt="">
               </div>
-              <h2>算法</h2>
-              <p>解决方案的准确完整描述和一系列解决问题的清晰指令</p>
             </div>
-          </li>
-          <li>
-            <div>
-              <div class="icon">
-                <div><img src="../../assets/icon1_3.png" alt=""></div>
+            <div class="info">
+              <h2>数据不上链，链上只有数据目录</h2>
+              <p>数据所有权归供应方所有，数据交换平台不存储供应方数据，而是将数据封装放入沙盒，只有持有沙盒秘钥的需求方才可查看数据。从而在</p>
+            </div>
+          </div>
+          <div class="i3">
+            <div class="icon">
+              <div>
+                <img src="../../assets/data_icon3.png" alt="">
               </div>
-              <h2>算力</h2>
-              <p>分布在不同地方的存储资源和计算资源</p>
             </div>
-          </li>
-        </ul>
+            <div class="info">
+              <h2>法律保障：GDPR</h2>
+              <p>GDPR的通过意味着欧盟对个人信息保护及其监管达到了前所未有的高度，看成史上最严格的数据保护法案。</p>
+              <p>世界上其他国家和地区政府积极配合，成为趋势。</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="detail">
       <div>
-        <h2>
-          <p>LKBT是为数据资产交易平台服务的金融基础设施，实现数据资产的可信交易和记账服务，可与各类知识计算化操作系统和数据资产交易系统无缝连接。</p>
-        </h2>
+        <h2></h2>
         <div :class="{icons: true, show: loadAnimate}"></div>
       </div>
     </div>
     <div class="box">
-      <div class="title technical_system">技术体系</div>
-      <div :class="{net: true, show: boxShow >= 2}">
-        <div class="left">
-          <div v-for="(n, index) in net" :class="{'btn'
-          : true, [n.name]: true, on: netInfo && n.name == netInfo.name}" :key="index" @click="onChangeNet(index)">
-            <div><i></i></div>
+      <div class="title route_and_goal">路径和目标</div>
+      <ul class="route" :class="{net: true, show: boxShow >= 2}">
+        <li>
+          <div class="icon1"></div>
+          <p>从竞争格局出发，放弃互联网巨头的优势阵地，从商业银行古老的组织结构与技术路线上无法改变的环节入手。</p>
+          <h5>重新建立交易场景的结构，改变银行-核心客户之间的关系格局。</h5>
+        </li>
+        <li>
+          <div class="icon2"></div>
+          <p>将银行的核心系统建立在客户系统中，放弃传统商业银行需要大力建设的资金、账户、数据的优势。</p>
+          <h5>以金融科技产品、全球化的货币兑换服务以及人工智能应用形成新的利润点。</h5>
+        </li>
+        <li>
+          <div class="icon3"></div>
+          <p>在数字身份认证、数字货币的全球化流通、数据可信交换、金融人工智能等领域协同合作伙伴不断强化自身的竞争实力。 </p>
+          <h5>建立更加广泛的开发者生态，为客户输出更有价值的应用服务。</h5>
+        </li>
+      </ul>
+    </div>
+    <div class="bg">
+      <div class="box">
+        <div class="title technical_system">技术体系</div>
+        <div :class="{net: true, show: boxShow >= 3}">
+          <div class="left">
+            <div v-for="(n, index) in net" :class="{'btn'
+            : true, [n.name]: true, on: netInfo && n.name == netInfo.name}" :key="index" @click="onChangeNet(index)">
+              <div><i></i></div>
+            </div>
           </div>
-        </div>
-        <div class="right" v-show="netInfo">
-          <h3><span>{{ netInfo && netInfo.title }}</span></h3>
-          <p>{{ netInfo && netInfo.content }}</p>
+          <div class="right" v-show="netInfo">
+            <h3><span>{{ netInfo && netInfo.title }}</span></h3>
+            <p>{{ netInfo && netInfo.content }}</p>
+          </div>
         </div>
       </div>
     </div>
     <div class="application">
       <div class="box">
         <div class="title application_scenarios">应用场景</div>
-        <div class="app_detail_cover" :class="{app_detail_cover: true, show: boxShow >= 3}">
+        <div class="app_detail_cover" :class="{app_detail_cover: true, show: boxShow >= 4}">
           <img src="../../assets/application.png" alt="">
         </div>
-        <div class="app_detail" :class="{app_detail: true, show: boxShow >= 3}">
-          <p>LKBT首选的合作伙伴是以“全球医疗均质化”为核心愿景的医疗智能合约协作平台——LEBEN（同医）,LEBEN的可信计算技术，能够使交换过程中的数据不可复制、不可迁移、也不可见，以保证医疗数据可以进行跨机构、跨地区以及跨境的可信数据交换。LEBEN（同医）目前已与安贞医院等重点医疗机构合作开发了“CHDr.（先心安）”、“外科大数据辅助（暂定名）”、“脑卒中项目（暂定名）”等多项医疗场景应用。</p>
-          <p>LKBT将独家为 LEBEN平台打造数据资产交易金融基础设施，全面为LEBEN平台参与方提供底层交易计算服务。</p>
-        </div>
-        <div class="app_btn">
+        <div class="app_btn" :class="{app_detail_cover: true, show: boxShow >= 4}">
           <div>
             <router-link to="/applicationscenaios">了解更多</router-link>
           </div>
@@ -87,7 +111,7 @@
     <div class="team">
       <div class="box">
         <div class="title core_team">核心团队</div>
-        <ul :class="{show: boxShow >= 4}">
+        <ul :class="{show: boxShow >= 5}">
           <li>
             <div>
               <div class="img lang"></div>
@@ -142,7 +166,7 @@ export default {
       scroll: 0,
       boxShow: 0,
       offset: 0,
-      boxs: [0, 470, 2440, 3312, 4642],
+      boxs: [0, 630, 2440, 3570, 4642, 5650],
       loadAnimate: false,
       net: [
         {
@@ -189,6 +213,7 @@ export default {
           index = i;
         }
       }
+      console.log('scroll', scroll);
       this.$data.boxShow = index;
       this.$data.loadAnimate = top < 0 ? true : false;
     }
@@ -239,8 +264,7 @@ export default {
     }
   }
   .future{
-    height: 612px;
-    background: url(../../assets/data_bg.png) no-repeat center;
+    height: 700px;
     .onShow;
     .stars{
       position: relative;
@@ -279,6 +303,122 @@ export default {
           top: 264px;
           right: -58px;
           animation-duration: 2s;
+        }
+      }
+    }
+    .main{
+      position: relative;
+      .tit{
+        width: 120px;
+        top:296px;
+        left: 530px;
+        position: absolute;
+        color: #70cccc;
+        font-size: 26px;
+        font-weight: bold;
+      }
+      .i_common{
+        position: absolute;
+        background: url(../../assets/data_icon_bg.png) no-repeat;
+        h2{
+          color: #70cccc;
+          font-size: 26px;
+          font-weight: bold;
+          line-height: 44px;
+        }
+        p{
+          font-size: 20px;
+          color: #737373;
+          line-height: 1.5em;
+          &::before{
+            display: inline-block;
+            width: 32px;
+            content: '•';
+          }
+        }
+        .info{
+          text-align: left;
+        }
+        &:hover{
+          .icon{
+            background: rgba(255, 213, 89, .8);
+            & > div {
+              background: linear-gradient(120deg, #fac73f, #f7d344);
+            }
+          }
+          h2{
+            color: #f8d143;
+          }
+          p{
+            &::before{
+              color: #f8d143;
+            }
+          }
+        }
+      }
+      .i1{
+        .i_common;
+        width: 702px;
+        height:216px;
+        z-index: 2;
+        top: 48px;
+        left: 354px;
+        background-position: 188px 139px;
+        .icon{
+          float: left;
+        }
+        .info{
+          padding-left: 230px;
+        }
+      }
+      .i2{
+        .i_common;
+        width: 476px;
+        height:396px;
+        padding-left: 150px;
+        z-index: 3;
+        top: 241px;
+        left: 575px;
+        background-position: 0px -792px;
+        .info{
+          padding-left: 16px;
+        }
+      }
+      .i3{
+        .i_common;
+        width: 578px;
+        height: 386px;
+        z-index: 4;
+        top: 241px;
+        left: 0px;
+        background-position: 440px -1889px;
+        .icon{
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+        .info{
+          padding-top: 55px;
+          padding-right: 174px;
+        }
+      }
+      .icon{
+        .button_style;
+        background: rgba(186, 288, 234, .3);
+        border-radius: 100%;
+        display: table;
+        & > div{
+          display: table-cell;
+          vertical-align: middle;
+          width: 162px;
+          height: 162px;
+          line-height: 152px;
+          border-radius: 100%;
+          background: linear-gradient(120deg, #81d5d3, #6acddb);
+          img{
+            vertical-align: middle;
+            display: inline;
+          }
         }
       }
     }
@@ -346,6 +486,12 @@ export default {
       }
     }
   }
+  .bg1{
+    padding-top: 172px;
+    padding-bottom: 458px;
+    background: url(../../assets/bg_top.png) no-repeat top center, url(../../assets/bg_bottom.png) no-repeat center bottom;
+    background-color: #f4fcfc;
+  }
   .detail{
     padding-top: 172px;
     padding-bottom: 458px;
@@ -357,25 +503,15 @@ export default {
     }
     h2{
       height: 444px;
-      background: url(../../assets/logo2.png) no-repeat 30px top;
-      padding-left: 600px;
-      p{
-        padding: 150px 10px 0 140px;
-        font-size: 24px;
-        line-height: 1.5em;
-        color: #70cccc;
-        font-weight: normal;
-        text-indent: 2em;
-        text-align: left;
-      }
+      background: url(../../assets/lkbt.png) no-repeat center;
     }
     .icons{
-      width: 662px;
-      height: 421px;
-      background: url(../../assets/icons.png) no-repeat;
+      width: 100%;
+      height: 430px;
+      background: url(../../assets/icons.png) no-repeat center;
       position: absolute;
       top: 398px;
-      left: 444px;
+      left: 0;
       z-index: 2;
       transform: translateY(100%);
       opacity: 0;
@@ -386,11 +522,77 @@ export default {
       }
     }
   }
+  .route{
+    padding-top: 78px;
+    padding-bottom: 50px;
+    .icon{
+      width: 296px;
+      height: 296px;
+      background: url(../../assets/route_goal.png) no-repeat
+    }
+    &::after{
+      content: '';
+      display: block;
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+      clear: both;
+    }
+    li{
+      padding-left: 24px;
+      padding-right: 120px;
+      width: 296px;
+      float: left;
+      text-align: left;
+      background:url('../../assets/li_bor.png') no-repeat right center;
+      &:last-child{
+        padding-right: 0;
+        background: none;
+      }
+      .icon1{
+        .icon;
+        background-position: 0 0;
+      }
+      .icon2{
+        .icon;
+        background-position: 0 -600px;
+      }
+      .icon3{
+        .icon;
+        background-position: 0 -1200px;
+      }
+      p{
+        padding-top: 24px;
+        font-size: 20px;
+        color: #737373;
+        line-height: 1.5em;
+      }
+      h5{
+        color: #82d2d2;
+        font-size: 20px;
+        padding-top: 10px;
+      }
+      &:hover{
+        .icon1{
+          background-position: 0 -300px;
+        }
+        .icon2{
+          background-position: 0 -900px;
+        }
+        .icon3{
+          background-position: 0 -1500px;
+        }
+        h5{
+          color: #f8d143;
+        }
+      }
+    }
+  }
   .net{
     .clear;
     .onShow;
     padding-top: 90px;
-    margin-bottom: 105px;
+    margin-bottom: 10px;
     .left {
       width: 600px;
       height: 585px;
@@ -507,7 +709,7 @@ export default {
         background: #ecfafa;
         span{
           padding: 0 25px;
-          background: #fff;
+          background: #f4fcfc;
           line-height: 26px;
         }
       }
@@ -521,15 +723,20 @@ export default {
       }
     }
   }
+  .bg{
+    padding-top: 40px;
+    padding-bottom: 130px;
+    background: url(../../assets/bg2_top.png) no-repeat center top, url(../../assets/bg2_bottom.png) no-repeat center bottom;
+    background-color: #f4fcfc;
+  }
   .application{
     padding-top: 40px;
     padding-bottom: 150px;
-    background: #f4fcfc url(../../assets/bg2_top.png) no-repeat center top;
     .app_detail_cover{
       .onShow;
       margin-top: 94px;
       padding: 96px 65px;
-      background: #e9fbfb;
+      background: #f4fcfc;
       border-radius: 10px;
     }
     .app_detail{
@@ -568,8 +775,7 @@ export default {
     }
   }
   .team{
-    
-      background: url(../../assets/team.jpg) no-repeat center top;
+      background: url(../../assets/team2.jpg) no-repeat center top;
       box-sizing: border-box;
       padding-bottom: 300px;
       padding-top: 150px;

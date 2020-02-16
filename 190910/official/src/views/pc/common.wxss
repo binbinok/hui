@@ -1,0 +1,49 @@
+#app {
+  max-width: 1920px;
+  min-width: 1202px;
+  margin: 0 auto;
+  font-family: "Microsoft YaHei", '微软雅黑', "MicrosoftJhengHei", '华文细黑', 'STHeiti', 'MingLiu';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+#app .title {
+  font-size: 24px;
+  padding-top: 50px;
+  color: #43cfcd;
+  text-align: center;
+  margin-top: 140px;
+}
+#app .title.future_data_assets {
+  background: url('../../assets/future_data_assets.png') no-repeat center;
+}
+#app .title.tteod {
+  background: url('../../assets/tteod.png') no-repeat center;
+}
+#app .title.route_and_goal {
+  background: url('../../assets/route_and_goal.png') no-repeat center;
+}
+#app .title.technical_system {
+  background: url('../../assets/technical_system.png') no-repeat center;
+}
+#app .title.application_scenarios {
+  background: url('../../assets/application_scenarios.png') no-repeat center;
+}
+#app .title.what_is_leben {
+  background: url('../../assets/what_is_leben.png') no-repeat center;
+}
+#app .title.leben {
+  background: url('../../assets/leben.png') no-repeat center;
+}
+#app .title.dupay {
+  background: url('../../assets/dupay.png') no-repeat center;
+}
+#app .title.group {
+  background: url('../../assets/group.png') no-repeat center;
+}
+#app .title.core_team {
+  margin-top: 0;
+  color: #fff;
+  background: url('../../assets/core_team.png') no-repeat center;
+}
